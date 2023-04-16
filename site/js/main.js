@@ -28,7 +28,7 @@
                 }
             }
             $("#ctctct").replaceWith("<a class='contact' href='mailto:" + link + "'>E-mail me<i class='flaticon-speech39'></i></a>" +
-                "<p>or use my vCard</p>" + "<img src='/site/images/vCard.svg' width='140px' />");
+                "<p>or use my vCard</p>" + "<img src='/site/images/vCard.png' width='140px' />");
         }
 
         mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
