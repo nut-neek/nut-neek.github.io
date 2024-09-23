@@ -13,21 +13,29 @@
         });
 
         {
-            var coded = "5tKqu@gq5qLjqgq.0ubt"
-            var hash = "wq4RblMEV8Bg9rhnc0Wz1kI6vyeOTHdFG5Zu3xm2oLPajXfpASYJQsN7UCKitD"
-            var shift = coded.length
-            var link = ""
-            for (i = 0; i < coded.length; i++) {
-                if (hash.indexOf(coded.charAt(i)) == -1) {
-                    ltr = coded.charAt(i)
-                    link += (ltr)
+            const hash = "wq4RblMEV8Bg9rhnc0Wz1kI@vyeOTHdFG5Zu.xm2oLPajXfpASYJQsN7UCKitD"
+            function decode(encoded) {
+                const shift = encoded.length
+                let text = ""
+                for (const symbol of encoded) {
+                    const position_in_hash = (hash.indexOf(symbol) - shift + hash.length) % hash.length
+                    text += hash.charAt(position_in_hash)
                 }
-                else {
-                    ltr = (hash.indexOf(coded.charAt(i)) - shift + hash.length) % hash.length
-                    link += (hash.charAt(ltr))
-                }
+                return text
             }
-            $("#ctctct").replaceWith("<a class='contact' href='mailto:" + link + "'>E-mail me<i class='flaticon-speech39'></i></a>" +
+
+            function encode(text) {
+                const shift = text.length
+                let encoded = ""
+                for (const symbol of text) {
+                    const position_in_hash = (hash.indexOf(symbol) + shift + hash.length) % hash.length
+                    encoded += hash.charAt(position_in_hash)
+                }
+                return encoded
+            }
+
+
+            $("#ctctct").replaceWith("<a class='contact' href='mailto:" + decode('GiCwZPBwGwoawBw7uiC') + "'>E-mail me<i class='flaticon-speech39'></i></a>" +
                 "<p>or use my vCard</p>" + "<img src='/site/images/vCard.png' width='140px' />");
         }
 
