@@ -35,7 +35,7 @@
             }
 
 
-            $("#ctctct").replaceWith("<a class='contact' href='mailto:" + decode('GiCwZPBwGwoawBw7uiC') + "'>E-mail me<i class='flaticon-speech39'></i></a>" +
+            $("#ctctct").replaceWith("<a class='contact' href='mailto:" + decode('GiCwZPBwGwoawBw7uiC') + "'>E-mail me<i class=\"fa fa-paper-plane-o\"></i></a>" +
                 "<p>or use my vCard</p>" + "<img src='/site/images/vCard.png' width='140px' />");
         }
 
